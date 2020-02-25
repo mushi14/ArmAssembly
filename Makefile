@@ -1,7 +1,7 @@
 ASM=as
 ASMFLAGS=-g
-OBJS=main_s.o
-EXECUTABLE=main_s
+OBJS=quadratic_c.o quadratic_s.o main.o
+EXECUTABLE=main
 
 $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) -o $(EXECUTABLE) $^
