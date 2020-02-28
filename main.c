@@ -20,7 +20,7 @@ int main() {
 	printf("%d\n", sum_array_c(arr, 5));
 	printf("%d\n", sum_array_s(arr, 5));
 
-	printf("%d\n", strlen_c("hello"));
-	printf("%d\n", strlen_s("hello"));
+	printf("%d\n", strlen_c("hello my name is mushahid"));
+	printf("%d\n", strlen_s("hello my name is mushahid"));
 	return 0;
 }
