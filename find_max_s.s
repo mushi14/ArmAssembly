@@ -8,16 +8,22 @@ find_max_s:
 	mov ip, #0
 	mov r2, #0
 
-loop:
-	ldr r3, [r0]
-	add ip, ip, #1
-	add r0, r0, #4
-
-	cmp r2, r3
-	mov r2, r3	
-
+compare:
+	mov r2, r3
+	
 	cmp ip, r1
 	blt loop
+
+loop:	
+	ldr r3, [r0]
+	add r0, r0, #4
+	add ip, ip, #1
+
+	cmp r2, r3
+	blt compare	
+	
+	cmp ip, r1
+	blt loop	
 
 end:	
 	mov r0, r2
