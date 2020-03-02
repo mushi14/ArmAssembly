@@ -3,6 +3,9 @@
 @ r0: n, nth number to find in the sequence
 
 fib_iter_s:
+	cmp r0, #0
+	beq endall
+
 	mov r1, #0
 	mov r2, #0
 	mov r3, #1
@@ -19,4 +22,7 @@ loop:
 
 end:
 	mov r0, r3
+	bx lr
+
+endall:
 	bx lr
