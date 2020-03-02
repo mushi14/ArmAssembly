@@ -123,9 +123,26 @@ void test_fib_iter() {
 	}
 }
 
-int main() {
-	int arr[5] = {5, -10, 1, 9, -3};
+void test_strlen() {
+	char *str1 = "hello my name is mushahid hassan";
+	char *str2 = "assembly is confusing!!";
+	char *str3 = "this string should be 40 characters long";
+	char *str4 = "bye";
+
+	printf("C: %d\n", strlen_c(str1));
+	printf("Assembly: %d\n", strlen_s(str1));
 	
+	printf("C: %d\n", strlen_c(str2));
+	printf("Assembly: %d\n", strlen_s(str2));
+
+	printf("C: %d\n", strlen_c(str3));
+	printf("Assembly: %d\n", strlen_s(str3));
+
+	printf("C: %d\n", strlen_c(str4));
+	printf("Assembly: %d\n", strlen_s(str4));
+}
+
+int main() {
 	printf("Quadratic Tests:\n");	
 	test_quadratic();
 	printf("\n");
@@ -142,7 +159,13 @@ int main() {
 	test_fib_iter();
 	printf("\n");	
 
-	printf("%d\n", strlen_c("hello my name is mushahid"));
-	printf("%d\n", strlen_s("hello my name is mushahid"));
+	printf("Fibonacci Recursive Tests:\n");
+	//test_fib_rec();
+	printf("\n");
+
+	printf("String Length Tests:\n");	
+	test_strlen();
+	printf("\n");	
+
 	return 0;
 }

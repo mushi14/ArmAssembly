@@ -4,7 +4,7 @@
 
 fib_iter_s:
 	cmp r0, #0
-	beq endall
+	beq zero
 
 	mov r1, #0
 	mov r2, #0
@@ -24,5 +24,5 @@ end:
 	mov r0, r3
 	bx lr
 
-endall:
+zero:
 	bx lr
