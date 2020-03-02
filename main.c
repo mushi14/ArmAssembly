@@ -97,10 +97,10 @@ void test_find_max() {
 	int arr4[1000];
 
 	for (int i = 0; i < 1000; i++) {
-		arr1[i] = generate_random(-99, 99);
-		arr2[i] = generate_random(-99, 99);
-		arr3[i] = generate_random(-99, 99);
-		arr4[i] = generate_random(-99, 99);
+		arr1[i] = generate_random(-10000, 10000);
+		arr2[i] = generate_random(-10000, 10000);
+		arr3[i] = generate_random(-10000, 10000);
+		arr4[i] = generate_random(-10000, 10000);
 	}
 
 	printf("C: %d\n", find_max_c(arr1, (sizeof(arr1) / sizeof(int))));
@@ -122,6 +122,10 @@ void test_fib_iter() {
 		printf("Assembly: %d\n", fib_iter_s(i));
 	}
 }
+
+//void test_fib_rec() {
+
+//}
 
 void test_strlen() {
 	char *str1 = "hello my name is mushahid hassan";

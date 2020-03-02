@@ -6,7 +6,7 @@
 find_max_s:
 
 	mov ip, #0
-	mov r2, #0
+	mov r2, #-100
 
 loop:	
 	ldr r3, [r0]

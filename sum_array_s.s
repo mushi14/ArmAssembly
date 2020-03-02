@@ -15,7 +15,7 @@ loop:
 	add r0, r0, #4
 
 	cmp ip, r1
-	ble loop
+	blt loop
 
 	mov r0, r2
 	bx lr
