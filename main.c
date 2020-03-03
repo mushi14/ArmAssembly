@@ -169,31 +169,45 @@ void test_strlen() {
 }
 
 // Main function
-int main() {
-	printf("Quadratic Tests:\n");	
-	test_quadratic();
-	printf("\n");
+int main(int argc, char **argv) {
 	
-	printf("Sum Array Tests:\n");	
-	test_sum_array();
-	printf("\n");	
-
-	printf("Finding Max Tests:\n");	
-	test_find_max();
-	printf("\n");	
-
-	printf("Fibonacci Iterative Tests:\n");	
-	test_fib_iter();
-	printf("\n");	
-
-	printf("Fibonacci Recursive Tests:\n");
-	printf("%d\n", fib_rec_s(5));
-	//test_fib_rec();
-	printf("\n");
-
-	printf("String Length Tests:\n");	
-	test_strlen();
-	printf("\n");	
+	if (argc == 2) {
+		if (argv[1] == "-q") {
+			printf("Quadratic Tests:\n");	
+			test_quadratic();
+			printf("\n");
+		} else if (argv[1] == "-s") {
+			printf("Sum Array Tests:\n");	
+			test_sum_array();
+			printf("\n");	
+		} else if (argv[1] == "-m") {
+			printf("Finding Max Tests:\n");	
+			test_find_max();
+			printf("\n");	
+		} else if (argv[1] == "-fi") {
+			printf("Fibonacci Iterative Tests:\n");	
+			test_fib_iter();
+			printf("\n");	
+		} else if (argv[1] == "-fr") {
+			printf("Fibonacci Recursive Tests:\n");
+			printf("%d\n", fib_rec_s(5));
+			//test_fib_rec();
+			printf("\n");	
+		} else if (argv[1] == "-l") {
+			printf("String Length Tests:\n");	
+			test_strlen();
+			printf("\n");	
+		} else if (argv[1] == "-h") {
+			printf("-q: quadratic tests\n");
+			printf("-s: sum array tests\n");
+			printf("-m: maximum element in array tests\n");
+			printf("-fi: fibonacci iterative tests\n");
+			printf("-fr: fibonacci recursive tests\n");
+			printf("-l: string length tests\n");
+		}
+	} else {
+		printf("Not enough arguments\n");
+	}
 
 	return 0;
 }
