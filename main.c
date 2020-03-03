@@ -141,8 +141,15 @@ void test_fib_iter() {
 
 // Tests for the fibonnaci recursive c and assembly functions
 void test_fib_rec() {
-	printf("C: %d\n", fib_rec_c(0));
-	printf("Assembly: %d\n", fib_rec_s(0));	
+	
+	// Finds the first 20 fibonnaci numbers, 0-19
+	for (int i = 0; i < 20; i++) {
+		
+		// Printing both c and assembly outputs
+
+		printf("C: %d\n", fib_rec_c(i));
+		printf("Assembly: %d\n", fib_rec_s(i));
+	}
 }
 
 // Tests for the strlen c and assembly functions
@@ -170,41 +177,34 @@ void test_strlen() {
 
 // Main function
 int main(int argc, char **argv) {
-	
 	if (argc == 2) {
-		if (argv[1] == "-q") {
+		if (strcmp(argv[1], "-q") == 0) {
 			printf("Quadratic Tests:\n");	
 			test_quadratic();
-			printf("\n");
-		} else if (argv[1] == "-s") {
+		} else if (strcmp(argv[1], "-s") == 0) {
 			printf("Sum Array Tests:\n");	
 			test_sum_array();
-			printf("\n");	
-		} else if (argv[1] == "-m") {
+		} else if (strcmp(argv[1], "-m") == 0) {
 			printf("Finding Max Tests:\n");	
 			test_find_max();
-			printf("\n");	
-		} else if (argv[1] == "-fi") {
+		} else if (strcmp(argv[1], "-fi") == 0) {
 			printf("Fibonacci Iterative Tests:\n");	
 			test_fib_iter();
-			printf("\n");	
-		} else if (argv[1] == "-fr") {
+		} else if (strcmp(argv[1], "-fr") == 0) {
 			printf("Fibonacci Recursive Tests:\n");
-			printf("%d\n", fib_rec_s(5));
-			//test_fib_rec();
-			printf("\n");	
-		} else if (argv[1] == "-l") {
+			//printf("%d\n", fib_rec_s(3));
+			test_fib_rec();
+		} else if (strcmp(argv[1], "-l") == 0) {
 			printf("String Length Tests:\n");	
 			test_strlen();
-			printf("\n");	
-		} else if (argv[1] == "-h") {
+		} else if (strcmp(argv[1], "-h") == 0) {
 			printf("-q: quadratic tests\n");
 			printf("-s: sum array tests\n");
 			printf("-m: maximum element in array tests\n");
 			printf("-fi: fibonacci iterative tests\n");
 			printf("-fr: fibonacci recursive tests\n");
 			printf("-l: string length tests\n");
-		}
+		}	
 	} else {
 		printf("Not enough arguments\n");
 	}
