@@ -54,7 +54,7 @@ void test_quadratic() {
        	c = generate_random(-99, 99);  
 
 	printf("C: %d\n", quadratic_c(x, a, b, c));
-	printf("Assemblyn: %d\n", quadratic_s(x, a, b, c));
+	printf("Assembly: %d\n", quadratic_s(x, a, b, c));
 	
 	// Calling random number generator
 	x = generate_random(-99, 99); 
@@ -192,7 +192,6 @@ int main(int argc, char **argv) {
 			test_fib_iter();
 		} else if (strcmp(argv[1], "-fr") == 0) {
 			printf("Fibonacci Recursive Tests:\n");
-			//printf("%d\n", fib_rec_s(3));
 			test_fib_rec();
 		} else if (strcmp(argv[1], "-l") == 0) {
 			printf("String Length Tests:\n");	
@@ -206,7 +205,7 @@ int main(int argc, char **argv) {
 			printf("-l: string length tests\n");
 		}	
 	} else {
-		printf("Not enough arguments\n");
+		printf("Number of arguments not correct.\n");
 	}
 
 	return 0;

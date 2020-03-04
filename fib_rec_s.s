@@ -11,6 +11,7 @@ fib_rec_s:
 	beq zero_or_one
 
 	push {lr}
+	add r0, r0, #1
 	mov r3, #0
 	bl recurse
 	pop {lr}
@@ -28,10 +29,10 @@ pop_lr:
 	pop {lr}
 	
 	cmp r0, #0
-	beq base_case_one
+	beq base_case_zero
 
 	cmp r0, #1
-	beq base_case_two
+	beq base_case_one
 
 	add r3, r2, r1
 	mov r1, r2
@@ -39,12 +40,12 @@ pop_lr:
 
 	bx lr
 
-base_case_one:
+base_case_zero:
 	mov r1, #0
 	add r0, r0, #1
 	b zero_or_one
 
-base_case_two:
+base_case_one:
 	mov r2, #1
 	add r0, r0, #1
 	b zero_or_one
