@@ -6,6 +6,8 @@
 @ r3: c
 
 quadratic_s:
+
+	@ performs the quadratic functions and moves variables around in the order of operation
 	mul r5, r0, r0
 	mul r1, r1, r5
 	mul r2, r2, r0	

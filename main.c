@@ -75,10 +75,10 @@ void test_sum_array() {
 
 	// Populating the array with random numbers from range -99 to 99
 	for (int i = 0; i < 1000; i++) {
-		arr1[i] = generate_random(-99, 99);
-		arr2[i] = generate_random(-99, 99);
-		arr3[i] = generate_random(-99, 99);
-		arr4[i] = generate_random(-99, 99);
+		arr1[i] = generate_random(-10, 10);
+		arr2[i] = generate_random(-10, 10);
+		arr3[i] = generate_random(-10, 10);
+		arr4[i] = generate_random(-10, 10);
 	}
 
 	// Printing both c and assembly outputs of each trial
@@ -177,25 +177,33 @@ void test_strlen() {
 
 // Main function
 int main(int argc, char **argv) {
+	// Integrating a flag system, thus a flag must be present to run a specific test
 	if (argc == 2) {
+		// If -q flag is present, print quadratic tests
 		if (strcmp(argv[1], "-q") == 0) {
 			printf("Quadratic Tests:\n");	
 			test_quadratic();
+		// If -s flag is present, print sum array tests
 		} else if (strcmp(argv[1], "-s") == 0) {
 			printf("Sum Array Tests:\n");	
 			test_sum_array();
+		// If -m flag is present, print the find max tests
 		} else if (strcmp(argv[1], "-m") == 0) {
 			printf("Finding Max Tests:\n");	
 			test_find_max();
+		// If -fi flag is present, print iterative fibonacci tests
 		} else if (strcmp(argv[1], "-fi") == 0) {
 			printf("Fibonacci Iterative Tests:\n");	
 			test_fib_iter();
+		// If -fr flag is present, print recursive fibonacci tests
 		} else if (strcmp(argv[1], "-fr") == 0) {
 			printf("Fibonacci Recursive Tests:\n");
 			test_fib_rec();
+		// If -l flag is present, print string length tests
 		} else if (strcmp(argv[1], "-l") == 0) {
 			printf("String Length Tests:\n");	
 			test_strlen();
+		// Flag for displaying valid flags and their output
 		} else if (strcmp(argv[1], "-h") == 0) {
 			printf("-q: quadratic tests\n");
 			printf("-s: sum array tests\n");
