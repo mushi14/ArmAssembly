@@ -6,7 +6,7 @@
  ## March 04, 2020    
    
 * Overall Thoughts:  
-Project03 was not too hard to implement. Arm assembly language, can be a little confusing at times, but the online   
+Project03 was not too hard to implement. Arm assembly language can be a little confusing at times, but the online   
 arm instructions guide was really helpful during those times. Overall, I had a great time figuring out how to write  
 different functions in assembly.  
   
